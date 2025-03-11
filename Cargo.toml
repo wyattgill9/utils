@@ -1,0 +1,32 @@
+[package]
+name = "utils"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+num-bigint = "0.4.6"
+
+[dev-dependencies]
+criterion = "0.5"
+
+[[bench]]
+name = "stack_bench"
+harness = false
+
+[[bench]]
+name = "fib_bench"
+harness = false
+
+[profile.bench]
+opt-level = 3
+lto = true
+strip = true
+codegen-units = 1
+panic = "abort"
+
+[profile.release]
+opt-level = 3
+lto = true
+strip = true
+codegen-units = 1
+panic = "abort"
