@@ -5,6 +5,7 @@ edition = "2024"
 
 [dependencies]
 num-bigint = "0.4.6"
+num-traits = "0.2.19"
 
 [dev-dependencies]
 criterion = "0.5"

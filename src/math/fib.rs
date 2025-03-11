@@ -1,7 +1,23 @@
 use num_bigint::BigInt;
+use num_traits::ToPrimitive;
 
-pub fn fib(n: isize) -> BigInt {
-    fib_luc(n).0
+pub enum FibResult {
+    Small(u128),
+    Large(BigInt),
+}
+
+pub fn fib(n: isize) -> FibResult {
+    if n < 0 {
+        panic!("Fibonacci is not defined for negative numbers");
+    }
+
+    let (fib_n, _) = fib_luc(n);
+
+    if n <= 186 {
+        FibResult::Small(fib_n.to_u128().unwrap())
+    } else {
+        FibResult::Large(fib_n)
+    }
 }
 
 fn fib_luc(mut n: isize) -> (BigInt, BigInt) {
