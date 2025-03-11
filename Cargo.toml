@@ -8,9 +8,6 @@ num-bigint = "0.4.6"
 num-traits = "0.2.19"
 rayon = "1.10.0"
 
-[build-dependencies]
-bindgen = "0.71.1"
-
 [dev-dependencies]
 criterion = "0.5"
 
