@@ -1,4 +1,4 @@
-name: Utility Benchmark
+name: Utility Benchmarks
 
 on:
   push:
@@ -21,17 +21,9 @@ jobs:
         with:
           toolchain: stable
 
-      - name: Install C build dependencies
+      - name: Install dependencies
         run: |
-          sudo apt-get update
-          sudo apt-get install -y gcc make
-
-      - name: Compile C code
-        run: |
-          gcc -o example ./clibs/example.h
-
-      - name: Install Rust dependencies
-        run: cargo build --release
+          cargo build --release
 
       - name: Run benchmarks
-        run: cargo bench
+        run: cargo bench 
