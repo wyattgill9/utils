@@ -1,3 +1,4 @@
+use bindgen::CargoCallbacks;
 use bindgen;
 
 fn main() {
