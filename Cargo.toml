@@ -1,6 +1,9 @@
 [package]
-name = "utils"
+name = "wg-utils"
 version = "0.1.0"
+description = "Personal Utility Functions"
+license = "MIT"
+repository = "https://github.com/wyattgill/utility"
 edition = "2021"
 
 [dependencies]
